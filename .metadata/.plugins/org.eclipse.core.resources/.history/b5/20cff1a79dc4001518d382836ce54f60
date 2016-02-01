@@ -1,0 +1,944 @@
+/*******************************************************************************
+* Michael Yang                                                                 *
+* Computer Science                                                             *
+* 2B                                                                           *
+* February 17, 2012                                                            *
+* Sample17 - Graphics Window Project                                           *
+* *****************************************************************************/
+import javax.swing.*;
+import java.awt.*;
+public class Sample17 extends JFrame
+{
+  //set size of window here
+  final int length = 350;
+  final int height = 365;
+  
+  public Sample17()
+  { 
+    super("Spongebob Squarepants with Guitar");
+    Container container = getContentPane(); 
+    setBackground(new Color(0,0,0));
+    setSize(length, height);
+    setVisible(true);
+  }
+    
+  public void paint(Graphics g)
+  {
+    Draw.fillRectangle(g,0,0,350,370,Color.white);
+    //BEGIN BELOW THIS LINE
+    
+    /**************************************************************************/
+    //draw the yellow color on the body of spongebob//
+    Polygon p1 = new Polygon();
+      p1.addPoint(74,89);
+      p1.addPoint(85,81);
+      p1.addPoint(94,76);
+      p1.addPoint(107,76);
+      p1.addPoint(112,71);
+      p1.addPoint(120,70);
+      p1.addPoint(131,61);
+      p1.addPoint(144,62);
+      p1.addPoint(150,54);
+      p1.addPoint(162,55);
+      p1.addPoint(166,49);  
+      p1.addPoint(179,46);
+      p1.addPoint(182,48);
+      p1.addPoint(187,54);
+      p1.addPoint(188,63);
+      p1.addPoint(194,73);
+      p1.addPoint(198,90);
+      p1.addPoint(202,96);
+      p1.addPoint(201,108);
+      p1.addPoint(206,112);
+      p1.addPoint(207,122);
+      p1.addPoint(207,150);
+      p1.addPoint(121,174);
+      p1.addPoint(119,161);
+      p1.addPoint(97,144);
+      p1.addPoint(92,138);
+      p1.addPoint(88,136);
+      p1.addPoint(86,128);
+      p1.addPoint(78,121);
+      p1.addPoint(73,119);
+    Draw.fillPolygon(g,p1,new Color(248,234,3));
+    /**************************************************************************/
+  
+    
+    /**************************************************************************/
+    //draw the little yellow part below spongebob's left arm//
+    Polygon p10 = new Polygon();
+      p10.addPoint(101,176);
+      p10.addPoint(112,176);
+      p10.addPoint(104,169);
+    Draw.fillPolygon(g,p10,new Color(248,234,3));
+    Polygon p30 = new Polygon();
+      p30.addPoint(180,159);
+      p30.addPoint(113,183);
+      p30.addPoint(113,174);
+    Draw.fillPolygon(g,p30,new Color(248,234,3));
+    /**************************************************************************/
+  
+    
+    /**************************************************************************/
+    //draw the top line of spongebob's body//
+    Draw.line(g,179,46,166,49,new Color(180,177,46));
+    Draw.line(g,166,49,162,55,new Color(180,177,46));
+    Draw.line(g,162,55,150,54,new Color(180,177,46));
+    Draw.line(g,150,54,144,62,new Color(180,177,46));
+    Draw.line(g,144,62,131,61,new Color(180,177,46));
+    Draw.line(g,131,61,120,70,new Color(180,177,46));
+    Draw.line(g,120,70,112,71,new Color(180,177,46));
+    Draw.line(g,112,71,107,76,new Color(180,177,46));
+    Draw.line(g,107,76,94,76,new Color(180,177,46));
+    Draw.line(g,94,76,85,85,new Color(180,177,46));
+    Draw.line(g,85,85,74,89,new Color(180,177,46));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw the right line of spongebob's body//
+    Draw.line(g,179,46,182,48,new Color(180,177,46));
+    Draw.line(g,182,48,187,54,new Color(180,177,46));
+    Draw.line(g,187,54,188,63,new Color(180,177,46));
+    Draw.line(g,188,63,194,73,new Color(180,177,46));
+    Draw.line(g,194,73,198,90,new Color(180,177,46));
+    Draw.line(g,198,90,202,96,new Color(180,177,46));
+    Draw.line(g,202,96,201,108,new Color(180,177,46));
+    Draw.line(g,201,108,206,112,new Color(180,177,46));
+    Draw.line(g,206,112,207,122,new Color(180,177,46));
+    Draw.line(g,207,122,207,150,new Color(180,177,46));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw the left line of spongebob's body//
+    Draw.line(g,74,89,80,101,new Color(180,177,46));
+    Draw.line(g,80,101,85,101,new Color(180,177,46));
+    Draw.line(g,85,101,91,110,new Color(180,177,46));
+    Draw.line(g,91,110,96,119,new Color(180,177,46));
+    Draw.line(g,96,119,101,129,new Color(180,177,46));
+    Draw.line(g,101,129,109,133,new Color(180,177,46));
+    Draw.line(g,109,133,112,142,new Color(180,177,46));
+    /**************************************************************************/
+    
+   
+    /**************************************************************************/
+    //draw the way left line of spongebob's body//
+    Draw.line(g,74,89,73,119,new Color(180,177,46));
+    Draw.line(g,73,119,78,121,new Color(180,177,46));
+    Draw.line(g,78,121,86,128,new Color(180,177,46));
+    Draw.line(g,86,128,88,136,new Color(180,177,46));
+    Draw.line(g,88,136,92,138,new Color(180,177,46));
+    Draw.line(g,92,138,97,144,new Color(180,177,46));
+    /**************************************************************************/
+  
+    
+    /**************************************************************************/
+    //draw spongebob's eyes and eyebrows//
+    //eyebrows//
+    Draw.fillOval(g,158,79,17,18,new Color(255,255,255));
+    Draw.oval(g,133,97,20,15,new Color(0,0,0)); 
+    Draw.oval(g,158,79,17,18,new Color(0,0,0)); 
+    Draw.fillOval(g,133,97,19,14,new Color(255,255,255));      
+    Draw.fillArc(g,133,71,15,13,220,20,new Color(248,234,3));
+    Draw.arc(g,133,71,15,13,220,20,new Color(0,0,0));
+    Draw.line(g,146,67,151,60,new Color(0,0,0));
+    Draw.line(g,151,60,158,58,new Color(0,0,0));
+    Draw.line(g,120,80,114,79,new Color(0,0,0));
+    Draw.line(g,114,79,107,80,new Color(0,0,0));
+    //eyes//
+    Draw.fillOval(g,127,97,7,6,new Color(119,164,195));  
+    Draw.oval(g,127,97,7,6,new Color(0,0,0)); 
+    Draw.fillSquare(g,124,94,5,new Color(0,0,0)); 
+    Draw.fillCircle(g,155,78,5,new Color(119,164,195));  
+    Draw.circle(g,155,78,5,new Color(0,0,0));
+    Draw.fillCircle(g,155,78,2,new Color(0,0,0));  
+    Draw.fillArc(g,133,113,16,4,0,180,new Color(248,234,3));
+    Draw.arc(g,133,113,16,4,0,180,new Color(0,0,0));
+    /**************************************************************************/
+ 
+    
+    /**************************************************************************/
+    //draw all of spongebob's gray green circle patches//
+    Draw.fillOval(g,91,91,6,8,new Color(178,166,4));
+    Draw.fillOval(g,96,92,2,4,new Color(178,166,4));
+    Draw.fillOval(g,87,118,5,6,new Color(178,166,4));
+    Draw.fillOval(g,96,132,2,4,new Color(178,166,4));
+    Draw.fillOval(g,105,140,5,6,new Color(178,166,4));
+    Draw.fillOval(g,95,102,2,4,new Color(178,166,4));
+    Draw.fillCircle(g,178,58,3,new Color(178,166,4)); 
+    Draw.fillOval(g,189,120,6,8,new Color(178,166,4));
+    Draw.fillOval(g,195,135,2,4,new Color(178,166,4));
+    Draw.fillCircle(g,120,147,2,new Color(178,166,4));
+    Draw.fillCircle(g,127,160,5,new Color(178,166,4));
+    /**************************************************************************/
+  
+    
+    /**************************************************************************/
+    //draw spongebob's nose//
+    Draw.fillCircle(g,166,97,5,new Color(248,234,3)); 
+    Draw.fillArc(g,168,94,8,4,315,180,new Color(248,234,3));
+    Draw.arc(g,168,94,6,4,315,180,new Color(0,0,0));
+    Draw.line(g,155,106,166,90,new Color(0,0,0));
+    Draw.line(g,161,111,173,96,new Color(0,0,0));
+    /**************************************************************************/
+   
+    
+    /**************************************************************************/
+    //draw part of spongebob's left side of his shirt//
+    Draw.fillCircle(g,100,156,11,new Color(255,255,255));
+    Draw.arc(g,100,155,11,11,80,260,new Color(0,0,0));
+    Draw.line(g,121,162,103,146,new Color(0,0,0));
+    Draw.line(g,121,162,121,174,new Color(0,0,0));
+    Draw.line(g,121,174,111,174,new Color(0,0,0));
+    Draw.line(g,111,174,93,165,new Color(0,0,0));
+    Draw.line(g,100,149,100,156,new Color(0,0,0));
+    Draw.line(g,100,156,94,158,new Color(0,0,0));
+    /**************************************************************************/
+   
+    
+    /**************************************************************************/
+    //draw spongebob's left arm//
+    Polygon p2 = new Polygon();
+      p2.addPoint(58,115);
+      p2.addPoint(100,151);
+      p2.addPoint(100,156);
+      p2.addPoint(96,156);
+      p2.addPoint(55,121);
+    Draw.fillPolygon(g,p2,new Color(248,234,3));
+    Draw.line(g,100,151,58,115,new Color(84,78,42));
+    Draw.line(g,96,157,55,121,new Color(84,78,42));
+    /**************************************************************************/
+   
+    
+    /**************************************************************************/
+    //draw spongebob's bracelet//
+    Draw.line(g,53,103,63,98,new Color(0,0,0));
+    Draw.line(g,63,98,55,105,new Color(0,0,0));
+    Draw.line(g,59,108,67,113,new Color(0,0,0));
+    Draw.line(g,67,113,57,114,new Color(0,0,0));
+    Draw.line(g,52,118,49,128,new Color(0,0,0));
+    Draw.line(g,49,128,46,118,new Color(0,0,0));
+    Draw.line(g,41,118,35,124,new Color(0,0,0));
+    Draw.line(g,35,124,38,115,new Color(0,0,0));
+    Draw.line(g,37,110,32,108,new Color(0,0,0));
+    Draw.line(g,32,108,39,107,new Color(0,0,0));
+    Draw.fillOval(g,49,112,10,8,new Color(0,0,0));
+    /**************************************************************************/
+ 
+    
+    /**************************************************************************/
+    //draw spongebob's hand and fingers//
+    Polygon p3 = new Polygon();
+      p3.addPoint(47,113);
+      p3.addPoint(32,102);
+      p3.addPoint(32,95);
+      p3.addPoint(20,83);
+      p3.addPoint(20,77);
+      p3.addPoint(23,76);
+      p3.addPoint(35,89);
+      p3.addPoint(37,85);
+      p3.addPoint(40,85);
+      p3.addPoint(40,69);
+      p3.addPoint(44,65);
+      p3.addPoint(47,67);
+      p3.addPoint(47,84);
+      p3.addPoint(53,94);
+      p3.addPoint(53,107);
+    Draw.fillPolygon(g,p3,new Color(248,234,3));
+    Polygon p4 = new Polygon();
+      p4.addPoint(47,113);
+      p4.addPoint(32,102);
+      p4.addPoint(32,95);
+      p4.addPoint(20,83);
+      p4.addPoint(20,77);
+      p4.addPoint(23,76);
+      p4.addPoint(35,89);
+      p4.addPoint(37,85);
+      p4.addPoint(40,85);
+      p4.addPoint(40,69);
+      p4.addPoint(47,64);
+      p4.addPoint(47,84);
+      p4.addPoint(53,94);
+      p4.addPoint(53,107);
+    Draw.polygon(g,p4,new Color(0,0,0));
+    Draw.line(g,36,96,36,85,new Color(0,0,0)); 
+    Draw.line(g,47,99,38,99,new Color(0,0,0));
+    Draw.line(g,38,99,38,95,new Color(0,0,0)); 
+    Draw.line(g,38,95,44,95,new Color(0,0,0));
+    Draw.line(g,44,95,47,92,new Color(0,0,0));
+    Draw.line(g,47,92,48,92,new Color(0,0,0));
+    Draw.line(g,48,92,53,94,new Color(0,0,0));
+    Draw.line(g,53,94,53,104,new Color(0,0,0));
+    Draw.line(g,53,104,46,106,new Color(0,0,0)); 
+    Draw.line(g,46,106,45,99,new Color(0,0,0)); 
+    Draw.line(g,41,95,41,83,new Color(0,0,0));
+    /**************************************************************************/
+ 
+    
+    /**************************************************************************/
+    //draw the purple star on the middle right//
+    Polygon p5 = new Polygon();
+      p5.addPoint(37,164);
+      p5.addPoint(43,175);
+      p5.addPoint(53,175);
+      p5.addPoint(48,181);
+      p5.addPoint(51,194);
+      p5.addPoint(37,189);
+      p5.addPoint(27,194);
+      p5.addPoint(30,183);
+      p5.addPoint(23,175);
+      p5.addPoint(34,175);
+    Draw.fillPolygon(g,p5,new Color(79,73,205)); 
+    /**************************************************************************/
+ 
+    
+    /**************************************************************************/
+    //draw the purple star on the bottom center//
+    Polygon p6 = new Polygon();
+      p6.addPoint(98,241);
+      p6.addPoint(103,250);
+      p6.addPoint(112,250);
+      p6.addPoint(107,257);
+      p6.addPoint(110,268);
+      p6.addPoint(98,264);
+      p6.addPoint(87,268);
+      p6.addPoint(90,260);
+      p6.addPoint(83,250);
+      p6.addPoint(94,250);
+    Draw.fillPolygon(g,p6,new Color(79,73,205)); 
+    /**************************************************************************/
+  
+    
+    /**************************************************************************/
+    //draw the purple star on the top right//
+    Polygon p7 = new Polygon();
+      p7.addPoint(232,61);
+      p7.addPoint(237,71);
+      p7.addPoint(247,71);
+      p7.addPoint(241,78);
+      p7.addPoint(244,89);
+      p7.addPoint(232,84);
+      p7.addPoint(223,89);
+      p7.addPoint(226,78);
+      p7.addPoint(216,71);
+      p7.addPoint(226,71);
+    Draw.fillPolygon(g,p7,new Color(79,73,205)); 
+    /**************************************************************************/
+
+    
+    /**************************************************************************/
+    //draw the purple star on the center left//
+    Polygon p8 = new Polygon();
+      p8.addPoint(308,125);
+      p8.addPoint(311,134);
+      p8.addPoint(323,134);
+      p8.addPoint(316,141);
+      p8.addPoint(319,150);
+      p8.addPoint(308,147);
+      p8.addPoint(300,152);
+      p8.addPoint(303,142);
+      p8.addPoint(293,134);
+      p8.addPoint(302,134);
+    Draw.fillPolygon(g,p8,new Color(79,73,205)); 
+    /**************************************************************************/
+
+    
+    /**************************************************************************/
+    //draw spongebob's pants//
+    Polygon p9 = new Polygon();
+      p9.addPoint(104,184);
+      p9.addPoint(96,183);
+      p9.addPoint(92,192);
+      p9.addPoint(93,198);
+      p9.addPoint(98,201);
+      p9.addPoint(84,208);
+      p9.addPoint(97,223);
+      p9.addPoint(113,210);
+      p9.addPoint(120,211);
+      p9.addPoint(139,203);
+      p9.addPoint(104,192);
+    Draw.fillPolygon(g,p9,new Color(153,110,67)); 
+    Draw.line(g,101,176,90,193,new Color(0,0,0));
+    Draw.line(g,90,193,92,192,new Color(0,0,0));
+    Draw.line(g,92,192,93,198,new Color(0,0,0));
+    Draw.line(g,93,198,112,211,new Color(0,0,0));
+    Draw.line(g,112,211,120,211,new Color(0,0,0));
+    Draw.line(g,120,211,136,205,new Color(0,0,0));
+    Draw.line(g,98,201,84,208,new Color(0,0,0));
+    Draw.line(g,84,208,97,223,new Color(0,0,0));
+    Draw.line(g,97,223,113,210,new Color(0,0,0));
+    Draw.line(g,104,184,96,183,new Color(0,0,0));
+    /**************************************************************************/
+    
+      
+    /**************************************************************************/
+    //draw spongebob's mouth and chin only//
+    //mouth//
+    Polygon p11 = new Polygon();
+      p11.addPoint(114,121);
+      p11.addPoint(116,120);
+      p11.addPoint(120,118);
+      p11.addPoint(125,115);
+      p11.addPoint(138,115);
+      p11.addPoint(139,118);
+      p11.addPoint(147,117);
+      p11.addPoint(147,119);
+      p11.addPoint(150,119);
+      p11.addPoint(154,121);
+      p11.addPoint(154,123);  
+      p11.addPoint(157,123);
+      p11.addPoint(161,127);
+      p11.addPoint(166,137);
+      p11.addPoint(167,138);
+      p11.addPoint(168,139);
+      p11.addPoint(167,151);
+      p11.addPoint(161,156);
+      p11.addPoint(155,157);
+      p11.addPoint(145,157);
+      p11.addPoint(139,156);
+      p11.addPoint(135,155);
+      p11.addPoint(131,155);
+      p11.addPoint(127,151);
+      p11.addPoint(127,148);
+      p11.addPoint(124,149);
+      p11.addPoint(122,145);
+      p11.addPoint(120,143);
+      p11.addPoint(113,136);
+    Draw.fillPolygon(g,p11,new Color(141,0,11));
+    Polygon p12 = new Polygon();
+      p12.addPoint(114,121);
+      p12.addPoint(116,120);
+      p12.addPoint(120,118);
+      p12.addPoint(125,115);
+      p12.addPoint(138,115);
+      p12.addPoint(139,118);
+      p12.addPoint(147,117);
+      p12.addPoint(147,119);
+      p12.addPoint(150,119);
+      p12.addPoint(154,121);
+      p12.addPoint(154,123);  
+      p12.addPoint(157,123);
+      p12.addPoint(161,127);
+      p12.addPoint(166,137);
+      p12.addPoint(167,138);
+      p12.addPoint(168,139);
+      p12.addPoint(167,151);
+      p12.addPoint(161,156);
+      p12.addPoint(155,157);
+      p12.addPoint(145,157);
+      p12.addPoint(139,156);
+      p12.addPoint(135,155);
+      p12.addPoint(131,155);
+      p12.addPoint(127,151);
+      p12.addPoint(127,148);
+      p12.addPoint(124,149);
+      p12.addPoint(122,145);
+      p12.addPoint(120,143);
+      p12.addPoint(113,136);
+    Draw.polygon(g,p12,new Color(0,0,0));
+    //chin//
+    Polygon p13 = new Polygon();
+      p13.addPoint(171,149);
+      p13.addPoint(171,154);
+      p13.addPoint(167,159);
+      p13.addPoint(167,159);
+      p13.addPoint(171,154);
+    Draw.polygon(g,p13,new Color(0,0,0));
+    Draw.line(g,167,159,164,159,new Color(0,0,0));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw the insides of spongebob's mouth//
+    Draw.fillRectangle(g,130,115,9,11,new Color(255,255,255)); 
+    Draw.rectangle(g,130,115,9,11,new Color(0,0,0)); 
+    Draw.fillSquare(g,147,119,4,new Color(255,255,255)); 
+    Draw.square(g,147,119,4,new Color(0,0,0)); 
+    Draw.fillCircle(g,148,140,12,new Color(0,0,0));
+    Polygon p33 = new Polygon();
+      p33.addPoint(143,130);
+      p33.addPoint(145,137);
+      p33.addPoint(148,138);
+      p33.addPoint(151,137);
+      p33.addPoint(149,130); 
+    Draw.fillPolygon(g,p33,new Color(81,16,36));
+    Polygon p34 = new Polygon();
+      p34.addPoint(144,157);
+      p34.addPoint(145,150);
+      p34.addPoint(150,149);
+      p34.addPoint(160,147);
+      p34.addPoint(164,149);
+      p34.addPoint(163,157);
+    Draw.fillPolygon(g,p34,new Color(245,201,188));
+    Polygon p35 = new Polygon();
+      p35.addPoint(145,156);
+      p35.addPoint(145,150);
+      p35.addPoint(150,149);
+      p35.addPoint(160,147);
+      p35.addPoint(164,149);
+      p35.addPoint(163,157);
+    Draw.polygon(g,p34,new Color(0,0,0));
+    Draw.line(g,155,145,155,151,new Color(0,0,0));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw spongebob's left leg and shoe//
+    //left leg//
+    Draw.line(g,92,220,96,216,new Color(0,0,0)); 
+    Draw.line(g,96,216,94,214,new Color(0,0,0));
+    Draw.line(g,94,214,92,210,new Color(0,0,0)); 
+    Draw.line(g,92,210,87,211,new Color(0,0,0)); 
+    Draw.line(g,87,211,87,216,new Color(0,0,0));
+    Polygon p14 = new Polygon();
+      p14.addPoint(92,220);
+      p14.addPoint(96,216);
+      p14.addPoint(94,214);
+      p14.addPoint(92,210);
+      p14.addPoint(87,211);
+      p14.addPoint(87,216);
+      p14.addPoint(64,230);
+      p14.addPoint(66,235);
+      p14.addPoint(69,236);
+    Draw.fillPolygon(g,p14,new Color(248,234,3));
+    Polygon p15 = new Polygon();
+      p15.addPoint(92,220);
+      p15.addPoint(96,216);
+      p15.addPoint(94,214);
+      p15.addPoint(92,210);
+      p15.addPoint(87,211);
+      p15.addPoint(87,216);
+      p15.addPoint(64,230);
+      p15.addPoint(66,235);
+      p15.addPoint(69,236);
+    Draw.polygon(g,p15,new Color(0,0,0));
+    Polygon p16 = new Polygon();
+      p16.addPoint(64,230);
+      p16.addPoint(59,232);
+      p16.addPoint(58,235);
+      p16.addPoint(46,246);
+      p16.addPoint(46,250);
+      p16.addPoint(48,250);
+      p16.addPoint(62,238);
+      p16.addPoint(69,236);
+      p16.addPoint(65,235);
+    Draw.polygon(g,p16,new Color(0,0,0));
+    Draw.line(g,58,236,63,239,new Color(0,0,0));
+    Draw.line(g,51,240,57,244,new Color(0,0,0));
+    Draw.fillCircle(g,38,254,10,new Color(0,0,0));
+    //shoe//
+    Polygon p17 = new Polygon();
+      p17.addPoint(29,255);
+      p17.addPoint(20,255);
+      p17.addPoint(19,259);
+      p17.addPoint(19,262);
+      p17.addPoint(20,265);
+      p17.addPoint(23,265);
+      p17.addPoint(31,266);
+      p17.addPoint(31,264);
+      p17.addPoint(39,264);
+      p17.addPoint(39,263);
+      p17.addPoint(45,263);
+      p17.addPoint(45,257);
+      p17.addPoint(48,257);
+      p17.addPoint(48,250);
+      p17.addPoint(46,250);
+      p17.addPoint(46,256);
+    Draw.fillPolygon(g,p17,new Color(0,0,0));
+    Draw.fillSquare(g,23,258,5/2,new Color(255,255,255));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //Draw the right part of the shirt and draw the arm and hand on the guitar//
+    Draw.line(g,208,130,213,130,new Color(0,0,0)); 
+    Draw.line(g,213,130,224,133,new Color(0,0,0)); 
+    Draw.line(g,224,133,224,134,new Color(0,0,0)); 
+    Draw.line(g,224,134,227,134,new Color(0,0,0)); 
+    Draw.line(g,227,134,231,139,new Color(0,0,0)); 
+    Draw.line(g,207,145,210,145,new Color(0,0,0)); 
+    Draw.line(g,210,145,215,148,new Color(0,0,0)); 
+    Draw.line(g,215,148,231,139,new Color(0,0,0)); 
+    Polygon p41 = new Polygon();
+      p41.addPoint(235,153);
+      p41.addPoint(246,155);
+      p41.addPoint(259,137);
+      p41.addPoint(247,143);
+      p41.addPoint(241,149);
+    Draw.fillPolygon(g,p41,new Color(248,234,3));
+    Polygon p42 = new Polygon();
+      p42.addPoint(235,153);
+      p42.addPoint(246,155);
+      p42.addPoint(259,137);
+      p42.addPoint(247,143);
+      p42.addPoint(241,149);
+    Draw.polygon(g,p42,new Color(0,0,0));
+    /**************************************************************************/
+    
+  
+    /**************************************************************************/
+    //draw the flames on the guitar...even more -.-//
+    //red part on the center left//
+    Draw.fillCircle(g,109,191,6,new Color(210,49,7));
+    Draw.circle(g,109,191,6,new Color(0,0,0));
+    Polygon p18 = new Polygon();
+      p18.addPoint(111,198);
+      p18.addPoint(155,204);
+      p18.addPoint(155,257);
+      p18.addPoint(158,259);
+      p18.addPoint(222,172);
+      p18.addPoint(223,161);
+      p18.addPoint(205,175);
+      p18.addPoint(194,161);
+      p18.addPoint(211,152);
+      p18.addPoint(198,152);
+      p18.addPoint(111,183);
+    Draw.fillPolygon(g,p18,new Color(4,16,178));
+    //yellow part in the middle//
+    Polygon p19 = new Polygon();
+      p19.addPoint(145,200);
+      p19.addPoint(144,194);
+      p19.addPoint(145,190);
+      p19.addPoint(147,189);
+      p19.addPoint(147,186);
+      p19.addPoint(150,186);
+      p19.addPoint(154,184);
+      p19.addPoint(157,184);
+      p19.addPoint(157,185);
+      p19.addPoint(155,185);
+      p19.addPoint(155,187);  
+      p19.addPoint(151,187);
+      p19.addPoint(149,189);
+      p19.addPoint(149,194);
+      p19.addPoint(155,194);
+      p19.addPoint(155,191);
+      p19.addPoint(157,191);
+      p19.addPoint(161,189);
+      p19.addPoint(163,185);
+      p19.addPoint(167,185);
+      p19.addPoint(167,188);
+      p19.addPoint(164,188);
+      p19.addPoint(162,195);
+      p19.addPoint(158,195);
+      p19.addPoint(154,195);
+      p19.addPoint(154,200);
+      p19.addPoint(162,200);
+      p19.addPoint(164,196);
+      p19.addPoint(166,196);
+      p19.addPoint(168,190);
+      p19.addPoint(170,190);
+      p19.addPoint(170,195);
+      p19.addPoint(167,197);
+      p19.addPoint(168,200);
+      p19.addPoint(172,200);
+      p19.addPoint(173,198);
+      p19.addPoint(175,198);
+      p19.addPoint(172,203);
+      p19.addPoint(169,203);
+      p19.addPoint(162,207);
+      p19.addPoint(162,211);
+      p19.addPoint(156,211);
+    Draw.fillPolygon(g,p19,new Color(231,235,99));
+    //dark orange on the center left//
+    Polygon p22 = new Polygon();
+      p22.addPoint(122,179);
+      p22.addPoint(122,200);
+      p22.addPoint(103,195);
+      p22.addPoint(111,185);
+      p22.addPoint(113,181);
+      p22.addPoint(120,180);
+    Draw.fillPolygon(g,p22,new Color(210,49,7));
+    //light orange on the center left//
+    Polygon p38 = new Polygon();
+      p38.addPoint(170,234);
+      p38.addPoint(212,170);
+      p38.addPoint(203,173);
+      p38.addPoint(169,213);
+    Draw.fillPolygon(g,p38,new Color(0,0,0));
+    //dark red on the bottom part of the guitar//
+    Polygon p21 = new Polygon();
+      p21.addPoint(148,195);
+      p21.addPoint(148,204);
+      p21.addPoint(129,198);
+      p21.addPoint(129,195);
+      p21.addPoint(125,186);
+      p21.addPoint(128,186);
+      p21.addPoint(131,183);
+      p21.addPoint(131,179);
+      p21.addPoint(134,178);
+      p21.addPoint(141,177);
+      p21.addPoint(136,179);
+      p21.addPoint(135,185);
+      p21.addPoint(144,183);
+      p21.addPoint(148,179);
+      p21.addPoint(154,176);
+      p21.addPoint(155,178);
+      p21.addPoint(151,178);
+      p21.addPoint(147,183);
+      p21.addPoint(136,186);
+      p21.addPoint(135,190);
+      p21.addPoint(135,195);
+      p21.addPoint(148,195);
+    Draw.fillPolygon(g,p21,new Color(222,171,79));
+    //dark orange on the bottom part of the guitar//
+    Polygon p27 = new Polygon();
+      p27.addPoint(161,257);
+      p27.addPoint(169,243);
+      p27.addPoint(155,243);
+      p27.addPoint(155,257);
+    Draw.fillPolygon(g,p27,new Color(210,49,7));
+    Polygon p20 = new Polygon();
+      p20.addPoint(122,179);
+      p20.addPoint(121,185);
+      p20.addPoint(133,189);
+      p20.addPoint(133,200);
+      p20.addPoint(121,198);
+    Draw.fillPolygon(g,p20,new Color(234,98,40));
+    Polygon p28 = new Polygon();
+      p28.addPoint(169,243);
+      p28.addPoint(182,223);
+      p28.addPoint(173,234);
+      p28.addPoint(169,234);
+      p28.addPoint(169,225);
+      p28.addPoint(163,225);
+      p28.addPoint(163,221);
+      p28.addPoint(155,221);
+      p28.addPoint(155,243);
+    Draw.fillPolygon(g,p28,new Color(227,154,60));
+    Polygon p29 = new Polygon();
+      p29.addPoint(163,221);
+      p29.addPoint(155,221);
+      p29.addPoint(155,207);
+      p29.addPoint(163,207);
+      p29.addPoint(162,213);
+      p29.addPoint(169,214);
+      p29.addPoint(173,207);
+      p29.addPoint(173,214);
+    Draw.fillPolygon(g,p29,new Color(253,243,190));
+    //draw the peg on the bottom//
+    Draw.fillArc(g,161,239,6,3,270,90,Color.white);
+    Draw.arc(g,161,239,6,3,270,90,Color.black);
+    Draw.line(g,157,235,162,235,new Color(0,0,0));
+    Draw.line(g,157,242,162,242,new Color(0,0,0));
+    Draw.line(g,160,235,160,242,new Color(0,0,0));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw the guitar base -.-//
+    Draw.line(g,111,198,155,204,new Color(0,0,0));
+    Draw.line(g,155,204,155,257,new Color(0,0,0));
+    Draw.line(g,155,257,158,259,new Color(0,0,0));
+    Draw.line(g,158,259,222,172,new Color(0,0,0));
+    Draw.line(g,222,172,223,161,new Color(0,0,0));
+    Draw.line(g,211,152,198,152,new Color(0,0,0));
+    Draw.line(g,198,152,111,183,new Color(0,0,0));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw the right leg and shoe//
+    //right leg//
+    Polygon p24 = new Polygon();
+      p24.addPoint(209,193);
+      p24.addPoint(226,195);
+      p24.addPoint(226,200);
+      p24.addPoint(225,204);
+      p24.addPoint(220,204);
+      p24.addPoint(208,197);
+    Draw.fillPolygon(g,p24,new Color(248,234,3));
+    Polygon p23 = new Polygon();
+      p23.addPoint(209,193);
+      p23.addPoint(226,195);
+      p23.addPoint(226,200);
+      p23.addPoint(225,204);
+      p23.addPoint(220,204);
+      p23.addPoint(208,197);
+    Draw.polygon(g,p23,new Color(0,0,0));
+    Polygon p25 = new Polygon();
+      p25.addPoint(225,204);
+      p25.addPoint(216,204);
+      p25.addPoint(207,218);
+      p25.addPoint(207,221);
+      p25.addPoint(215,217);
+      p25.addPoint(225,204);
+    Draw.polygon(g,p25,new Color(0,0,0));
+    //shoe//
+    Draw.line(g,213,209,219,209,new Color(0,0,0));
+    Draw.line(g,212,213,217,213,new Color(0,0,0));
+    Draw.line(g,211,215,215,215,new Color(0,0,0));
+    Draw.line(g,210,217,213,217,new Color(0,0,0));
+    Polygon p26 = new Polygon();
+      p26.addPoint(207,218);
+      p26.addPoint(203,218);
+      p26.addPoint(201,219);
+      p26.addPoint(201,221);
+      p26.addPoint(196,221);
+      p26.addPoint(196,234);
+      p26.addPoint(206,234);
+      p26.addPoint(206,231);
+      p26.addPoint(209,231);
+      p26.addPoint(209,234);
+      p26.addPoint(215,236);
+      p26.addPoint(223,236);
+      p26.addPoint(229,232);
+      p26.addPoint(229,225);
+      p26.addPoint(225,222);
+      p26.addPoint(215,222);
+      p26.addPoint(215,217);
+      p26.addPoint(207,221);
+    Draw.fillPolygon(g,p26,new Color(0,0,0));
+    Draw.fillSquare(g,219,224,4,new Color(255,255,255)); 
+    /**************************************************************************/
+      
+      
+    /**************************************************************************/
+    //draw the white stuff on the guitar//
+    Polygon p36 = new Polygon();
+      p36.addPoint(166,179);
+      p36.addPoint(178,197);
+      p36.addPoint(187,192);
+      p36.addPoint(173,173);
+    Draw.fillPolygon(g,p36,new Color(255,255,255)); 
+    Polygon p37 = new Polygon();
+      p37.addPoint(194,161);
+      p37.addPoint(205,175);
+      p37.addPoint(213,168);
+      p37.addPoint(206,156);
+    Draw.fillPolygon(g,p37,new Color(255,255,255));
+    /**************************************************************************/
+
+    
+    /**************************************************************************/
+    //draw the fret board, fingers, pegs and strings on the guitar//
+    //pegs//
+    Draw.fillRoundedRectangle(g,292,81,8,5,2,Color.black); 
+    Draw.fillRoundedRectangle(g,301,77,8,5,2,Color.black); 
+    Draw.fillRoundedRectangle(g,324,95,5,8,2,Color.black); 
+    Draw.fillCircle(g,319,107,3,Color.black);
+    Draw.fillCircle(g,332,89,4,Color.black);
+    Draw.fillSquare(g,295,86,2,Color.black); 
+    Draw.fillSquare(g,306,81,3,Color.black); 
+    Draw.line(g,317,82,316,76,new Color(0,0,0));
+    Draw.fillRoundedRectangle(g,311,75,10,2,1,Color.black); 
+    //fret board//
+    Polygon p39 = new Polygon();
+      p39.addPoint(204,156);
+      p39.addPoint(212,168);
+      p39.addPoint(301,107);
+      p39.addPoint(316,105);
+      p39.addPoint(335,81);
+      p39.addPoint(335,76);
+      p39.addPoint(329,76);
+      p39.addPoint(293,88);
+      p39.addPoint(294,97);
+    Draw.fillPolygon(g,p39,new Color(199,157,75));
+    Polygon p40 = new Polygon();
+      p40.addPoint(204,156);
+      p40.addPoint(212,168);
+      p40.addPoint(301,107);
+      p40.addPoint(316,105);
+      p40.addPoint(335,81);
+      p40.addPoint(335,76);
+      p40.addPoint(329,76);
+      p40.addPoint(293,88);
+      p40.addPoint(294,97);
+    Draw.polygon(g,p40,new Color(0,0,0));
+    //strings//
+    Draw.line(g,198,162,224,147,new Color(0,0,0));
+    Draw.line(g,206,172,229,154,new Color(0,0,0));
+    Draw.line(g,198,162,206,172,new Color(0,0,0));
+    Draw.line(g,210,153,217,163,new Color(0,0,0));
+    Draw.line(g,215,149,224,159,new Color(0,0,0));
+    Draw.line(g,223,145,230,155,new Color(0,0,0));
+    Draw.line(g,229,140,236,154,new Color(0,0,0));
+    Draw.line(g,235,136,245,147,new Color(0,0,0));
+    Draw.line(g,244,132,251,141,new Color(0,0,0));
+    Draw.line(g,251,126,258,136,new Color(0,0,0));
+    Draw.line(g,277,110,285,118,new Color(0,0,0));
+    Draw.line(g,284,106,291,114,new Color(0,0,0));
+    Draw.line(g,299,108,293,101,new Color(0,0,0));
+    Draw.line(g,299,107,310,103,new Color(0,0,0));
+    Draw.line(g,297,105,317,95,new Color(0,0,0));
+    Draw.line(g,295,106,325,88,new Color(0,0,0));
+    Draw.line(g,294,102,320,83,new Color(0,0,0));
+    Draw.line(g,294,103,310,85,new Color(0,0,0));
+    Draw.line(g,301,93,301,87,new Color(0,0,0));
+    //fingers//
+    Polygon p43 = new Polygon();
+      p43.addPoint(263,133);
+      p43.addPoint(264,128);
+      p43.addPoint(261,127);
+      p43.addPoint(262,125);
+      p43.addPoint(264,125);
+      p43.addPoint(267,127);
+      p43.addPoint(267,132);
+    Draw.fillPolygon(g,p43,new Color(248,234,3));
+    Polygon p44 = new Polygon();
+      p44.addPoint(263,133);
+      p44.addPoint(264,128);
+      p44.addPoint(261,127);
+      p44.addPoint(262,125);
+      p44.addPoint(264,125);
+      p44.addPoint(267,127);
+      p44.addPoint(267,132);
+    Draw.polygon(g,p44,new Color(0,0,0));
+    Polygon p45 = new Polygon();
+      p45.addPoint(267,127);
+      p45.addPoint(266,120);
+      p45.addPoint(269,119);
+      p45.addPoint(270,123);
+      p45.addPoint(272,124);
+      p45.addPoint(272,130);
+    Draw.fillPolygon(g,p45,new Color(248,234,3));
+    Polygon p46 = new Polygon();
+      p46.addPoint(267,127);
+      p46.addPoint(266,120);
+      p46.addPoint(269,119);
+      p46.addPoint(270,123);
+      p46.addPoint(272,124);
+      p46.addPoint(272,130);
+    Draw.polygon(g,p46,new Color(0,0,0));
+    Polygon p47 = new Polygon();
+      p47.addPoint(277,126);
+      p47.addPoint(277,120);
+      p47.addPoint(271,120);
+      p47.addPoint(271,118);
+      p47.addPoint(278,119);
+      p47.addPoint(279,126);
+    Draw.fillPolygon(g,p47,new Color(248,234,3));
+    Polygon p48 = new Polygon();
+      p48.addPoint(277,126);
+      p48.addPoint(277,120);
+      p48.addPoint(271,120);
+      p48.addPoint(271,118);
+      p48.addPoint(278,119);
+      p48.addPoint(279,126);
+    Draw.polygon(g,p48,new Color(0,0,0));
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw the rectangle, rounded rectangle, and square on the bottom left/
+    Draw.rectangle(g,1,287,125,71,Color.black); 
+    Draw.roundedRectangle(g,25,294,81,60,35,Color.black); 
+    Draw.rectangle(g,43,303,46,40,Color.black); 
+    /**************************************************************************/
+    
+    
+    /**************************************************************************/
+    //draw the text "Goofy Goobe" and "THA YANGSTER"
+    Draw.print(g,51,321,"Goofy",new Color(0,0,0), new Font("Arial", Font.BOLD, 8));
+    Draw.print(g,51,329,"Goobe",new Color(0,0,0), new Font("Arial", Font.BOLD, 8));
+    Draw.print(g,184,308,"THA YANGSTER",new Color(29,20,99), new Font("Arial", Font.PLAIN, 17));
+    /**************************************************************************/
+    
+    //DO NOT TYPE BELOW THIS LINE
+  }
+  
+  public static void main(String args[]) {
+    Sample17 prog = new Sample17();
+    prog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  }  
+}

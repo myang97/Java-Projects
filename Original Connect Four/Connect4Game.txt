@@ -1,0 +1,6 @@
+CONNECT FOUR
+                      BLUE WINS
+
+Total number pieces played before winner was declared: 
+
+                         17

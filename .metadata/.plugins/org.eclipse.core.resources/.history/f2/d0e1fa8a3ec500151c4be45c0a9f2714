@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+import java.io.*;
+public class BigDataReaderOrganizer
+{
+	public static void main(String[] args) throws IOException
+	{
+		Scanner inagain = new Scanner(new File("drop.txt"));
+		BufferedWriter outagain = new BufferedWriter(new FileWriter ("dropORGANIZERcoordinates.txt"));
+		
+		ArrayList<Patient> list = new ArrayList<Patient>();
+		
+		while(inagain.hasNext()){
+			String line = inagain.nextLine();
+			String[] s = line.split("\\s+");
+			list.add(new Patient(Integer.parseInt(s[0]),s[1],s[2],s[3],s[4],s[5]));
+		}
+		inagain.close();
+		Collections.sort(list);
+		
+		for(int i = 0; i < list.size()-1; i++){
+	       while (list.get(i).getID() == list.get(i+1).getID()){
+	               list.remove(i);
+	       }
+		}
+		
+		for(int i=0; i<list.size(); i++){
+			Patient temp = list.get(i);
+			outagain.write(temp.getLongitude());
+			outagain.write("     ");
+			outagain.write(temp.getLatitude());
+			outagain.write("     ");
+			outagain.newLine();
+		}
+		outagain.close();
+	}
+}

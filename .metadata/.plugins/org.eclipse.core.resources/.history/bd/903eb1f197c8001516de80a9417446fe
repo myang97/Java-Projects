@@ -1,0 +1,104 @@
+import java.util.Random;
+
+//This class simulates the Texas Lottery Game. 
+//It obtains the winning lottery numbers, and then starts a timer trying to see how long it'll take before the 6 numbers match up
+public class TexasLottoGame{
+	public static void main (String[]args){
+		Random rand = new Random();
+		rand.setSeed(1000);
+
+		int ctr = 0;
+		int tex1 = 0, tex2 = 0, tex3 = 0, tex4 = 0, tex5 = 0, tex6 = 0;
+		int my1 = 0, my2 = 0, my3 = 0, my4 = 0, my5 = 0, my6 = 0;
+
+		tex1 = rand.nextInt(54)+1;
+
+		do{
+			tex2 = rand.nextInt(54)+1;
+		}while (tex2 == tex1);
+
+		do{
+			tex3 = rand.nextInt(54)+1;
+		}while (tex3 == tex1 || tex2 == tex1);
+
+		do{
+			tex4 = rand.nextInt(54)+1;
+		}while (tex4 == tex1 || tex3 == tex1 || tex2 == tex1);
+
+		do{
+			tex5 = rand.nextInt(54)+1;
+		}while (tex5 == tex1 ||tex4 == tex1 || tex3 == tex1 || tex2 == tex1);
+
+		do{
+			tex6 = rand.nextInt(54)+1;
+		}while (tex6 == tex1 || tex5 == tex1 ||tex4 == tex1 || tex3 == tex1 || tex2 == tex1);
+
+		System.out.println();
+		System.out.printf("Texas Numbers:             %5d %5d %5d %5d %5d %5d", tex1, tex2, tex3, tex4, tex5, tex6);
+		System.out.println();
+
+		int match = 0;
+
+		long begin = System.currentTimeMillis();
+		System.out.println("Begin     " + begin);
+
+		do{
+			my1 = rand.nextInt(54)+1;
+			do{
+				my2 = rand.nextInt(54)+1;
+			}while (my2 == my1);
+
+			do{
+				my3 = rand.nextInt(54)+1;
+			}while (my3 == my1 || my2 == my1);
+
+			do{
+				my4 = rand.nextInt(54)+1;
+			}while (my4 == my1 || my3 == my1 || my2 == my1);
+
+			do{
+				my5 = rand.nextInt(54)+1;
+			}while (my5 == my1 ||my4 == my1 || my3 == my1 || my2 == my1);
+
+			do{
+				my6 = rand.nextInt(54)+1;
+			}while (my6 == my1 || my5 == my1 ||my4 == my1 || my3 == my1 || my2 == my1);
+
+			ctr++;
+			match = 0;
+
+			if (tex1 == my1 || tex1 == my2 || tex1 == my3 || tex1 == my4 || tex1 == my5 || tex1 == my6){
+				match++;
+			}
+			if (tex2 == my1 || tex2 == my2 || tex2 == my3 || tex2 == my4 || tex2 == my5 || tex2 == my6){
+				match++;
+			}
+			if (tex3 == my1 || tex3 == my2 || tex3 == my3 || tex3 == my4 || tex3 == my5 || tex3 == my6){
+				match++;
+			}
+			if (tex4 == my1 || tex4 == my2 || tex4 == my3 || tex4 == my4 || tex4 == my5 || tex4 == my6){
+				match++;
+			}
+			if (tex5 == my1 || tex5 == my2 || tex5 == my3 || tex5 == my4 || tex5 == my5 || tex5 == my6){
+				match++;
+			}
+			if (tex6 == my1 || tex6 == my2 || tex6 == my3 || tex6 == my4 || tex6 == my5 || tex6 == my6){
+				match++;
+			}
+		}while (match != 6);
+
+		long end = System.currentTimeMillis();
+		System.out.println("End       " + end);
+		System.out.println();
+
+		System.out.println("Time lapsed (miliseconds) = " + (end-begin));
+		System.out.println();
+
+		System.out.printf("Times it took to match:     %10000000000000d", ctr);
+		System.out.println();
+		System.out.println();
+
+		System.out.printf("My winning numbers:      %5d %5d %5d %5d %5d %5d", my1, my2, my3, my4, my5, my6);
+		System.out.println();
+	}
+}

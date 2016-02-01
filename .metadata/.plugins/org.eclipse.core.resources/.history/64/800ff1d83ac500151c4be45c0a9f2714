@@ -1,0 +1,65 @@
+//Michael Yang
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Formatter;
+import java.io.*;
+public class BigDataReader2
+{
+public static void main(String[] args) throws IOException
+{
+	Scanner inagain = new Scanner(new File("drop.txt"));
+	BufferedWriter outagain = new BufferedWriter(new FileWriter ("dropagain.txt"));
+	
+	ArrayList<Patient> list = new ArrayList<Patient>();
+	
+	while(inagain.hasNext())
+	{
+		String line = inagain.nextLine();
+		String[] s = line.split("\\s+");
+		list.add(new Patient(Integer.parseInt(s[0]),s[1],s[2],s[3],s[4],s[5]));
+	}
+	inagain.close();
+	Collections.sort(list);
+	
+	for(int i = 0; i < list.size()-1; i++) {
+		int temp = list.get(i).getID();
+		if (temp == list.get(i+1).getID()) {
+			list.add(i, new Patient(0));
+			while(temp == list.get(i+1).getID()) {
+				i++;
+			}
+			i++;
+			list.add(i, new Patient(1));
+		}
+	}
+	int counter = 0;
+	for(int i=0; i<list.size(); i++) {
+		if (list.get(i).getID() == 0)
+			outagain.write("SAME BEGIN");
+		else if (list.get(i).getID() == 1)
+			outagain.write("SAME END");
+		else {
+			Patient temp = list.get(i);
+			//String temp = Integer.toString(list.get(i).getID());
+			
+			//outagain.write(Integer.toString(temp.getID()));
+			//outagain.write("     ");
+			//outagain.write("%11s".format(temp.getNum(), System.getProperty("line.separator")));
+			//outagain.write("     ");
+			outagain.write(temp.getLongitude());
+			outagain.write("     ");
+			outagain.write(temp.getLatitude());
+			outagain.write("     ");
+			//outagain.write(temp.getDate());
+			//outagain.write("     ");
+			//outagain.write(temp.getFlu());
+		}
+		counter++;
+		outagain.newLine();
+	}
+	outagain.close();
+	System.out.println(counter);
+}
+}

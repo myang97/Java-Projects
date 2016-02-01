@@ -1,0 +1,117 @@
+/*******************************************************************************
+* Michael Yang                                                                 *
+* Computer Science                                                             *
+* 2B                                                                           *
+* January 17, 2012                                                             *
+* Sample09 - Average Calculator                                                *
+* *****************************************************************************/
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class AverageCalculator extends JFrame implements ActionListener
+{
+  JLabel L1 = new JLabel("",JLabel.CENTER);
+  
+  JButton B1 = new JButton();
+  JButton B2 = new JButton();
+
+  JTextField T1 = new JTextField();
+  JTextField T2 = new JTextField();
+  JTextField T3 = new JTextField();
+  JTextField T4 = new JTextField();
+ 
+ 
+  public AverageCalculator() 
+  {
+    
+    super("Average Calculator");
+    Container container = getContentPane(); 
+    setSize(300,150);
+    setLayout(new GridLayout(3,1));
+    
+    //start panel 1 here
+    JPanel panel01 = new JPanel(new GridLayout(1,5));//fix the number of components for this row
+      
+    T1.setText("0"); //user puts a number in the first 0 after the program is running//
+    panel01.add(T1);
+    
+    T2.setText("0"); //user puts a number in the second 0 after the program is running//
+    panel01.add(T2);
+    
+    T3.setText("0"); //user puts a number in the third 0 after the program is running//
+    panel01.add(T3);
+    
+    T4.setText("answer"); //after pressing "Average", the answer will appear on the 4th gray square//
+    T4.setBackground(Color.gray);
+    panel01.add(T4);
+    
+    L1.setIcon(new ImageIcon("calculator.gif")); //place picture of calculator//
+    panel01.add(L1);
+    
+      
+    container.add(panel01);
+    //end panel 1 here 
+    
+    //start panel 2 here and put the Average button with a picture of a calculator
+    JPanel panel02 = new JPanel(new GridLayout(1,1));//fix the number of components for this row
+      
+    B1.setIcon(new ImageIcon("calculatorButton.gif"));
+    B1.setText("Average");
+    B1.setHorizontalTextPosition(SwingConstants.RIGHT);
+    B1.setVerticalTextPosition(SwingConstants.CENTER);
+    B1.setFocusPainted(false); 
+    B1.addActionListener(this);
+    panel02.add(B1);
+    
+    container.add(panel02);
+    //end panel 2 here
+    
+    //start panel 3 here
+    JPanel panel03 = new JPanel(new GridLayout(1,1));//fix the number of components for this row//
+      
+    B2.setText("Clear"); //add a "clear" button//
+    B2.setFocusPainted(false); 
+    B2.addActionListener(this);
+    panel03.add(B2);
+      
+    container.add(panel03);
+    //end panel 3 here
+
+    //stop adding here
+    setVisible(true);
+  }
+  
+  /* activate each button here */
+  public void actionPerformed(ActionEvent e)
+  {
+    //start calculating the average
+    if (e.getSource() == B1)
+    {
+    int t1 = Integer.parseInt(T1.getText()); //input whole number in T1//
+    int t2 = Integer.parseInt(T2.getText()); //input whole number in T2//
+    int t3 = Integer.parseInt(T3.getText()); //input whole number in T2//
+    T4.setText("" + ((t1 + t2 + t3)/3)); //answer comes up in T4//
+    }
+    //stop 
+    
+    //start clearing everything on the textfields//
+    if (e.getSource() == B2)
+    {
+    T1.setText("");//clear number from T1//
+    T2.setText("");//clear number from T2//
+    T3.setText("");//clear number from T3//
+    T4.setText("");//clear answer from T4//
+    }
+    //stop 
+    
+    
+  }
+
+  public static void main(String args[]) {
+    AverageCalculator prog = new AverageCalculator();
+    prog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  }  
+}
+
+
+

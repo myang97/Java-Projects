@@ -1,0 +1,149 @@
+public class MagicSquare{
+	public static void main(String[] args){
+		final int SIZE = 4;
+		int[][] magicSquare;
+		magicSquare = createOddSquare(SIZE);
+		displaySquare(magicSquare);
+	}
+
+	private static int[][] createOddSquare(int SIZE){
+		int k, row, col;
+		row = 0;
+		col = SIZE/2;
+		int [][] magicSq = new int[SIZE][SIZE];
+
+		magicSq[row][col] = 1;
+
+		for(k=2; k<=SIZE*SIZE; k++){
+			//check if multiple of SIZE
+			if(k%SIZE == 1){
+				row++;
+			}
+			else{
+				//check if need to drop to bottom row
+				if(row - 1 < 0){
+					row = SIZE - 1;
+				}
+				else{
+					row--;
+				}
+
+				//check if need to go to far left
+				if(col + 1 == SIZE){
+					col = 0;
+				}
+				else{
+					col++;
+				}
+			}
+			magicSq[row][col] = k;
+		}
+		return magicSq;
+	}
+
+	private static void displaySquare(int[][] magicSq){
+		int SIZE = 7;
+		//first row with data table
+		System.out.print((char)218); //corner
+		for(int z = 0; z < 3; z++){
+			System.out.print((char)196);
+		}
+		for(int i = 1; i < SIZE; i++){
+			System.out.print((char)194); //line with perpendicular upanddown
+			for(int z = 0; z < 3; z++){
+				System.out.print((char)196);
+			}
+		}
+		System.out.print((char)191); //corner
+		System.out.println();
+
+		//first row of data numbers
+		System.out.print((char)179); //straight vertical
+		for(int i = 0; i < SIZE; i++){
+			if((magicSq[0][i] > 9 && magicSq[0][i] < 99) || magicSq[0][i] == 99){
+				System.out.print(magicSq[0][i] + " ");
+			}
+			if(magicSq[0][i] <= 9){
+				System.out.print(" " + magicSq[0][i] + " ");
+			}
+			if(magicSq[0][i] > 99){
+				System.out.print(magicSq[0][i]);
+			}
+			System.out.print((char)179);
+		}
+		System.out.println();
+
+		//next row of lines
+		for(int j = 1; j < SIZE-1; j++){
+			System.out.print((char)195);
+			for(int z = 0; z < 3; z++){
+				System.out.print((char)196);
+			}
+			for(int i = 1; i < SIZE; i++){
+				System.out.print((char)197);
+				for(int z = 0; z < 3; z++){
+					System.out.print((char)196);
+				}
+			}
+			System.out.print((char)180);
+			System.out.println();
+			System.out.print((char)179); //straight vertical
+			for(int i = 0; i < SIZE; i++){
+				if((magicSq[j][i] > 9 && magicSq[j][i] < 99) || magicSq[j][i] == 99){
+					System.out.print(magicSq[j][i] + " ");
+				}
+				if(magicSq[j][i] <= 9){
+					System.out.print(" " + magicSq[j][i] + " ");
+				}
+				if(magicSq[j][i] > 99){
+					System.out.print(magicSq[j][i]);
+				}
+				System.out.print((char)179);
+			}
+			System.out.println();
+		}
+
+		System.out.print((char)195);
+		for(int z = 0; z < 3; z++){
+			System.out.print((char)196);
+		}
+		for(int i = 1; i < SIZE; i++){
+			System.out.print((char)197); //line with all 4 intersections
+			for(int z = 0; z < 3; z++){
+				System.out.print((char)196);
+			}
+		}
+		System.out.print((char)180); //line with left straight line
+		System.out.println();
+
+		//last row of data numbers
+		System.out.print((char)179); //straight vertical
+		for(int i = 0; i < SIZE; i++){
+			if((magicSq[SIZE-1][i] > 9 && magicSq[SIZE-1][i] < 99) || magicSq[SIZE-1][i] == 99){
+				System.out.print(magicSq[SIZE-1][i] + " ");
+			}
+			if(magicSq[SIZE-1][i] <= 9){
+				System.out.print(" " + magicSq[SIZE-1][i] + " ");
+			}
+			if(magicSq[SIZE-1][i] > 99){
+				System.out.print(magicSq[SIZE-1][i]);
+			}
+			System.out.print((char)179);
+		}
+		System.out.println();
+
+		//last row with data table
+		System.out.print((char)192); //corner
+		for(int z = 0; z < 3; z++){
+			System.out.print((char)196);
+		}
+		for(int i = 1; i < SIZE; i++){
+			System.out.print((char)193); //line with perpendicular upanddown
+			for(int z = 0; z < 3; z++){
+				System.out.print((char)196);
+			}
+		}
+		System.out.print((char)217); //corner
+		System.out.println();
+	}
+}

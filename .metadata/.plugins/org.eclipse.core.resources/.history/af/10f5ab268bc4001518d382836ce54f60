@@ -1,0 +1,120 @@
+import java.awt.event.*;
+import java.awt.*;
+
+public class CommunityHospitalWithFace extends java.applet.Applet implements ActionListener, ItemListener
+{
+	Button b1 = new Button ("CheckOut");
+
+	Choice pullDown = new Choice();
+
+	Checkbox cb1 = new Checkbox ("Television?");
+	Checkbox cb2 = new Checkbox ("Telephone?");
+
+	TextArea ta1 = new TextArea("How many days will you be staying? \nAnswer in adjacent box.", 2,3,1);
+	TextField tf2 = new TextField (20);
+	TextField tf3 = new TextField (1000);
+	TextField tf4 = new TextField (1000);
+	TextField tf5 = new TextField (1000);
+	TextArea ta2 = new TextArea("PENDING ORDER", 2,3,1);
+	TextArea ta3 = new TextArea("PENDING ORDER", 2,3,1);
+	TextArea ta4 = new TextArea("PENDING ORDER", 2,3,1);
+
+	double room1 = 0;
+
+	public void init()
+	{
+		GridLayout grid = new GridLayout(4,3);
+		setLayout(grid);
+
+		add(pullDown);
+		pullDown.addItem("Private     -      $125.00");
+		pullDown.addItem("Semiprivate - $95.00");
+		pullDown.addItem("Ward        -      $75.00");
+
+		add (cb2);
+		add (cb1);
+
+		add(ta1);
+		add(tf2);
+		add(b1);
+		add(tf3);
+		add(tf4);
+		add(tf5);
+		add(ta2);
+		add(ta3);
+		add(ta4);
+
+		cb1.setFont(new Font("Comic Sans MS",Font.BOLD,20));
+		cb2.setFont(new Font("Comic Sans MS",Font.BOLD,20));
+		b1.setFont(new Font("Comic Sans MS",Font.BOLD,20));
+		ta1.setFont(new Font("Comic Sans MS",Font.BOLD,20));
+		tf2.setFont(new Font("Comic Sans MS",Font.BOLD,20));
+		tf3.setFont(new Font("Comic Sans MS",Font.BOLD,15));
+		tf4.setFont(new Font("Comic Sans MS",Font.BOLD,15));
+		tf5.setFont(new Font("Comic Sans MS",Font.BOLD,15));
+		ta2.setFont(new Font("Comic Sans MS",Font.BOLD,15));
+		ta3.setFont(new Font("Comic Sans MS",Font.BOLD,15));
+		ta4.setFont(new Font("Comic Sans MS",Font.BOLD,15));
+
+
+		tf3.setText("Select a room");
+		tf4.setText("Telephone is NOT added to your room");
+		tf5.setText("Television is NOT added to your room");
+
+		cb1.addItemListener(this);
+		cb2.addItemListener(this);
+		pullDown.addItemListener(this);
+		b1.addActionListener(this);
+	}
+
+	public void itemStateChanged(ItemEvent ie)
+	{
+		if(cb2.getState() == true)
+		{
+			tf4.setText("Telephone is added to your rrom");
+		}
+		if(cb1.getState() == true)
+		{
+			tf5.setText("Television is added to your room");
+		}
+		if(cb2.getState() == false)
+		{
+			tf4.setText("Telephone is NOT added to your rrom");
+		}
+		if(cb1.getState() == false)
+		{
+			tf5.setText("Television is NOT added to your room");
+		}
+		if(pullDown.getSelectedItem().equals("Private     -      $125.00"))
+		{
+			tf3.setText("Private room is selected");
+			room1 = 125.00;
+		}
+		if(pullDown.getSelectedItem().equals("Semiprivate - $95.00"))
+		{
+			tf3.setText("Semiprivate room is selected");
+			room1 = 95.00;
+		}
+		if(pullDown.getSelectedItem().equals("Ward        -      $75.00"))
+		{
+			tf3.setText("Ward room is selected");
+			room1 = 75.00;
+		}
+	}
+	public void actionPerformed (ActionEvent ae)
+	{
+		if(ae.getSource() == b1)
+		{
+			int numDays = Integer.parseInt(tf2.getText());
+			double roomCharge = numDays * room1;
+			double telephoneCharge = numDays * 1.75;
+			double televisionCharge = numDays * 3.50;
+			double totalCharge = telephoneCharge + televisionCharge + roomCharge;
+			ta2.setText("Community Hospital \n\nNumber of days in hospital:          " + numDays + "" + "\n\nType of room chosen: " + pullDown.getSelectedItem() + "");
+			ta3.setText("Room charge: $" + String.format("%.2f", roomCharge) + "" + "\n\nTelephone charge: $" + String.format("%.2f", telephoneCharge) + "" + "\n\nTelevision charge:  $" + String.format("%.2f", televisionCharge) + "");
+			ta4.setText("TOTAL DUE: $" + String.format("%.2f", totalCharge) + "");
+		}
+
+
+	}
+}
