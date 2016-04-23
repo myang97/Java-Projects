@@ -1,0 +1,1 @@
+This connect four is a class project, which allowed me to implement a better algorithm. In my previous connect four project, I used a lot of if statements in order to figure out if four in a row was found. Here, I used three methods to do it, cutting the code down by over a thousand lines.
