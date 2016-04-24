@@ -1,0 +1,1 @@
+This Connect Four utilizes the JPanel Class, which allows a GUI to appear. My code for this personal project is over 3000 lines, due to all of the if statements called on each button. I made this algorithm a lot more efficient in my updated Connect Four program.
